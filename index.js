@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const bookRouters = require('./routes/books')
+const logger = require('./logger')
 
+app.use(logger)
 app.use(express.json());
 app.use("/api/books",bookRouters);
 
